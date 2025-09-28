@@ -1,0 +1,30 @@
+**/.git/
+
+*dbg_history
+
+# Folder Ignores
+spotify-tui/
+scoop/
+helpbuilder/
+github-copilot/
+ghidra/
+frida/
+data/
+caddy/
+copyparty/
+.android/
+
+# File Ignores
+config.toml
+neovide_rCURRENT.log
+
+# Random Specific Ignores
+pwsh/Help/
+nushell/history.txt
+nvim/lazy-lock.json
+
+# GlazeWM and Zebar Ignores
+.glzr/tmp*
+.glzr/*.log
+.glzr/boiler*
+.glzr/zebar/starter/with-komorebi.html

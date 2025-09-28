@@ -1,0 +1,26 @@
+backtraces_path = "C:\\Users\\91724\\.config\\neovide_backtracess.log" # see below for the default platform specific location
+fork = true
+frame = "none"
+idle = true
+maximized = false
+mouse-cursor-icon = "arrow"
+
+# neovim-bin = "/usr/bin/nvim" # in reality found dynamically on $PATH if unset
+
+no-multigrid = false
+srgb = false # platform-specific: false (Linux/macOS) or true (Windows)
+tabs = true
+title-hidden = true
+vsync = true
+wsl = false
+
+[font]
+normal = ["JetBrainsMonoNL Nerd Font Mono"] # Will use the bundled Fira Code Nerd Font by default
+size = 11.0
+
+[box-drawing]
+# "font-glyph", "native" or "selected-native"
+mode = "native"
+
+[box-drawing.sizes]
+default = [2, 4]  # Thin and thick values respectively, for all sizes

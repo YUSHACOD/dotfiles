@@ -1,0 +1,161 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref: https://www.nerdfonts.com/cheat-sheet
+ */
+
+/* ==============================
+   CSS VARIABLES
+   ============================== */
+:root {
+  /* Colors */
+  --color-text: rgb(255 255 255 / 90%);
+  --color-text-dark: rgb(25 28 33 / 100%);
+  --color-accent: rgb(211 181 142 / 100%);
+  --color-accent-light: rgb(211 181 142 / 75%);
+  --color-focus: rgb(255 255 255);
+  --color-cpu-high: #2900b1;
+
+  /* Spacing */
+  --spacing-small: 4px;
+  --spacing-medium: 8px;
+  --spacing-gap: 4px;
+  --margin-right: 7px;
+
+  /* Typography */
+  --font-family-mono: 'JetBrainsMonoNL Nerd Font Mono', ui-monospace, monospace;
+  --font-size-base: 14px;
+  --font-weight-bold: 900;
+
+  /* Borders */
+  --border-radius: 2px;
+}
+
+/* ==============================
+   GLOBAL STYLES
+   ============================== */
+i {
+  color: var(--color-text);
+  margin-right: var(--margin-right);
+}
+
+body {
+  color: var(--color-text);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  overflow: hidden;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* ==============================
+   LAYOUT
+   ============================== */
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: var(--spacing-small) 1.5vw;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: center;
+  background: var(--color-accent);
+  margin-right: var(--spacing-gap);
+  padding: var(--spacing-small) var(--spacing-medium);
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.right {
+  justify-self: end;
+}
+
+/* ==============================
+   BUTTON-LIKE ELEMENTS
+   ============================== */
+.logo,
+.binding-mode,
+.tiling-direction,
+.network,
+.memory,
+.cpu,
+.battery {
+  background: var(--color-accent);
+  margin-right: var(--spacing-gap);
+  padding: var(--spacing-small) var(--spacing-medium);
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* ==============================
+   WORKSPACES
+   ============================== */
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  background: var(--color-accent-light);
+  margin-right: var(--spacing-gap);
+  padding: var(--spacing-small) var(--spacing-medium);
+  color: var(--color-text-dark);
+  border: none;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.workspace.displayed {
+  background: var(--color-focus);
+}
+
+.workspace.focused,
+.workspace:hover {
+  background: var(--color-accent);
+}
+
+/* ==============================
+   SPECIFIC ELEMENTS
+   ============================== */
+.binding-mode,
+.tiling-direction {
+  line-height: 1;
+}
+
+.binding-mode {
+  margin-right: var(--spacing-gap);
+}
+
+.cpu .high-usage {
+  color: var(--color-cpu-high);
+}
+
+.battery {
+  position: relative;
+}
+
+.battery .charging-icon {
+  position: absolute;
+  font-size: 7px;
+  left: -8px;
+  top: 3px;
+}

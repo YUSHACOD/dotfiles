@@ -1,0 +1,53 @@
+add_newline = true
+command_timeout = 200
+format = " $os[$directory$git_branch$git_status$git_state$git_metrics$cmd_duration]($style)\n $character"
+right_format =  "[$cmd_duration]($style)"
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = '[$duration](bold #d3b58e)'
+
+[os]
+format = "[$symbol]($style)"
+style = "bold cyan"
+disabled = false
+
+[os.symbols]
+Windows = " "
+Arch = "󰣇 "
+
+[character]
+error_symbol = "[- !!](bold red)"
+success_symbol = "[- ❯❯](bold #d3b58e)"
+
+[directory]
+truncation_length = 0
+truncation_symbol = ".../"
+repo_root_style = "bold #d3b58e"
+repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+format = "[$branch ]($style) "
+style = "italic #d0b892"
+always_show_remote = true
+
+[git_status]
+format     = '[$all_status]($style)'
+style      = "yellow"
+ahead      = "⇡${count} "
+diverged   = "⇕⇡${ahead_count}⇣${behind_count} "
+behind     = "⇣${count} "
+conflicted = " "
+up_to_date = " "
+untracked  = " "
+modified   = " "
+stashed    = " "
+staged     = " "
+renamed    = " "
+deleted    = "﫧"
+
+[git_state]
+
+[git_metrics]
+disabled = false
