@@ -1,23 +1,23 @@
-########### First initialize Starship #####
+# First initialize Starship ----------------------------------------------------------------------------------- #
 Invoke-Expression (& 'C:\Program Files\starship\bin\starship.exe' init powershell --print-full-init | Out-String)
-############################################
+# ------------------------------------------------------------------------------------------------------------- #
 
 
-## Custom env variables ##############
+# Custom env variables --------------- #
 $env:XDG_CONFIG_HOME = "$HOME\.config"
 $env:ANDROID_HOME = "E:\android_sdk"
-######################################
+# ------------------------------------ #
 
-#### at startup ######
+# At Startup ------- #
 Set-Location "$HOME"
-######################
+# ------------------ #
 
 
-## Zoxide Invocation ###############################################
+# Zoxide Invocation --------------------------------------------- #
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
-###################################################################
+# --------------------------------------------------------------- #
 
-## Sensible cli ###############################################
+# Sensible cli ----------------------------------------------------------------------------------- #
 if ($host.Name -eq 'ConsoleHost')
 {
 	Import-Module PSReadLine
@@ -54,13 +54,13 @@ function New-Symlink
 }
 
 Set-Alias ln New-Symlink
-###################################################################
+# ------------------------------------------------------------------------------------------------ #
 
-## Windows Development Shenanigans ################################# 
-D:\HeavyPrograms\VS\Common7\Tools\Launch-VsDevShell.ps1  -SkipAutomaticLocation -Arch amd64 | Out-Null
-###################################################################
+# Windows Development Shenanigans ---------------------------------------------------------------------- #
+D:\HeavyPrograms\VisualStudio2026\Common7\Tools\Launch-VsDevShell.ps1  -SkipAutomaticLocation -Arch amd64 | Out-Null 
+# ------------------------------------------------------------------------------------------------------ #
 
-## aliases #####################
+# Aliases ---------------------------------------------------------------------------------------------- #
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name psconf -Value D:\Documents\PowerShell\conf_script_ps\psconf.ps1
 Set-Alias -Name :q -Value D:\Documents\PowerShell\conf_script_ps\exit.ps1

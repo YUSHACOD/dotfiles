@@ -10,10 +10,10 @@
   /* Colors */
   --color-text: rgb(255 255 255 / 90%);
   --color-text-dark: rgb(25 28 33 / 100%);
-  --color-accent: rgb(211 181 142 / 100%);
-  --color-accent-light: rgb(211 181 142 / 75%);
+  --color-accent: rgb(206 206 206 / 100%);
+  --color-accent-light: rgb(206 206 206 / 75%);
   --color-focus: rgb(255 255 255);
-  --color-cpu-high: #2900b1;
+  --color-cpu-high: #d3fc1b;
 
   /* Spacing */
   --spacing-small: 4px;
@@ -24,10 +24,10 @@
   /* Typography */
   --font-family-mono: 'JetBrainsMonoNL Nerd Font Mono', ui-monospace, monospace;
   --font-size-base: 14px;
-  --font-weight-bold: 900;
+  --font-weight-bold: 600;
 
   /* Borders */
-  --border-radius: 2px;
+  --border-radius: 0px;
 }
 
 /* ==============================
@@ -72,11 +72,13 @@ body,
 
 .center {
   justify-self: center;
-  background: var(--color-accent);
+  background: var(--color-text-dark);
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
-  color: var(--color-text-dark);
-  border: none;
+  color: var(--color-accent);
+  border: 2px;
+  border-style: solid;
+  border-color: var(--color-accent);
   border-radius: var(--border-radius);
   cursor: pointer;
 }
@@ -95,11 +97,13 @@ body,
 .memory,
 .cpu,
 .battery {
-  background: var(--color-accent);
+  background: var(--color-text-dark);
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
-  color: var(--color-text-dark);
-  border: none;
+  color: var(--color-accent);
+  border: 2px;
+  border-style: solid;
+  border-color: var(--color-accent);
   border-radius: var(--border-radius);
   cursor: pointer;
 }
@@ -113,11 +117,13 @@ body,
 }
 
 .workspace {
-  background: var(--color-accent-light);
+  background: var(--color-text-dark);
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
-  color: var(--color-text-dark);
-  border: none;
+  color: var(--color-accent);
+  border: 2px;
+  border-style: solid;
+  border-color: var(--color-accent);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
   border-radius: var(--border-radius);
@@ -130,7 +136,9 @@ body,
 
 .workspace.focused,
 .workspace:hover {
+  border: none;
   background: var(--color-accent);
+  color: var(--color-text-dark);
 }
 
 /* ==============================

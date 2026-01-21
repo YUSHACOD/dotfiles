@@ -17,7 +17,7 @@ autocmd('LspAttach', {
 		vim.keymap.set("n", "K", function()
 			vim.lsp.buf.hover({
 				border = "rounded",
-				focusable = false,
+				focusable = true,
 				max_width = 80,
 				max_height = 20,
 			})

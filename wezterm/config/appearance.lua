@@ -3,7 +3,7 @@ local colors = require('colors.custom')
 
 return {
 	notification_handling = "NeverShow",
-	term = "wezterm",
+	term = "xterm-256color",
 
 	animation_fps = 60,
 	max_fps = 60,
