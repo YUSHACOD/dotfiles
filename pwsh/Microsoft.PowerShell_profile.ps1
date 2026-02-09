@@ -84,6 +84,5 @@ Set-Alias -Name npush -Value D:\Documents\PowerShell\conf_script_ps\npush.ps1
 Set-Alias -Name condroid -Value D:\Documents\PowerShell\conf_script_ps\condroid.ps1
 Set-Alias -Name love -Value D:\Documents\PowerShell\conf_script_ps\love.ps1
 Set-Alias -Name aemu -Value D:\Documents\PowerShell\conf_script_ps\aemu.ps1
-Set-Alias -Name detour -Value D:\Documents\PowerShell\conf_script_ps\detour.ps1
-Set-Alias -Name mb -Value ./run.ps1
+Set-Alias -Name mb -Value ./bxild.ps1
 Set-Alias -Name vi -Value D:\Documents\PowerShell\conf_script_ps\vi.ps1

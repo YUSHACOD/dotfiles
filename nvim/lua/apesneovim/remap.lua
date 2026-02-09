@@ -27,6 +27,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>s", "<cmd>vertical split<CR><C-w>l", opts)
 vim.keymap.set("n", "<leader>is", "<cmd>horizontal split<CR><C-w>j", opts)
 
+
 -- Remap window navigation
 vim.keymap.set("n", "<leader>h", "<C-w>h", opts)
 vim.keymap.set("n", "<leader>j", "<C-w>j", opts)
