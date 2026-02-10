@@ -1,4 +1,5 @@
 local wezterm = require('wezterm')
+
 local platform = require('utils.platform')
 local act = wezterm.action
 
