@@ -77,7 +77,7 @@ return {
 				check_outdated_packages_on_open = true,
 
 				---@since 1.0.0
-				border = 'bold',
+				border = 'none',
 
 				---@since 1.11.0
 				backdrop = 50,
@@ -238,9 +238,9 @@ return {
 		vim.diagnostic.config({
 			-- update_in_insert = true,
 			float = {
-				focusable = false,
+				focusable = true,
 				style = "minimal",
-				border = "rounded",
+				border = "none",
 				source = true,
 				header = "",
 				prefix = "",

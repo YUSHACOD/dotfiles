@@ -108,6 +108,8 @@ window_rules:
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper*' }
 
+      # - window_title: { regex: 'Canvas' }
+
       # Ignore Command Palette
       - window_process: { equals: 'Microsoft' }
         window_title: { regex: 'Command Palette' }

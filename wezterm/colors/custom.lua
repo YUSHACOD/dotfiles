@@ -19,6 +19,7 @@ local colors = {
 	cursor_fg = "#0e1415",
 	selection_bg = "#293334",
 	selection_fg = "#cecece",
+
 }
 
 return colors

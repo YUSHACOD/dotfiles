@@ -8,7 +8,7 @@ return {
 	animation_fps = 60,
 	max_fps = 60,
 
-	front_end = 'WebGpu',
+	front_end = 'OpenGL',
 
 	-- font
 	font = wezterm.font("JetBrainsMonoNL Nerd Font Mono"),
@@ -39,10 +39,10 @@ return {
 
 	-- window
 	window_padding = {
-		left = 5,
-		right = 5,
-		top = 5,
-		bottom = 5,
+		left = 2,
+		right = 2,
+		top = 2,
+		bottom = 2,
 	},
 
 	window_close_confirmation = 'NeverPrompt',

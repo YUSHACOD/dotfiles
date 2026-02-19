@@ -22,6 +22,9 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set("n", "<leader>n", "<cmd>noh<CR>")
 
+vim.keymap.set("n", "<leader>ve", ":set virtualedit=all<cr>")
+vim.keymap.set("n", "<leader>vo", ":set virtualedit=none<cr>")
+
 -- windowing shit
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>s", "<cmd>vertical split<CR><C-w>l", opts)

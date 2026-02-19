@@ -21,10 +21,11 @@ vim.loader.enable()
 
 vim.o.shell = "cmd"
 
-vim.cmd.colorscheme('naysayer')
-
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' }) -- Floats (Lazy, Mason, etc.)
 vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })       -- Popup menus, also seen in completion
 
 vim.o.exrc = true      -- allow local config
 vim.o.secure = true   -- restrict unsafe commands
+
+vim.cmd('colorscheme alabaster')
+

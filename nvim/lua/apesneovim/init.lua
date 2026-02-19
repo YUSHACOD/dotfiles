@@ -16,7 +16,7 @@ autocmd('LspAttach', {
 
 		vim.keymap.set("n", "K", function()
 			vim.lsp.buf.hover({
-				border = "rounded",
+				border = "none",
 				focusable = true,
 				max_width = 80,
 				max_height = 20,
@@ -27,8 +27,8 @@ autocmd('LspAttach', {
 
 		vim.keymap.set("n", "<leader>vd", function()
 			vim.diagnostic.open_float({
-				border = "rounded",
-				focusable = false,
+				border = "none",
+				focusable = true,
 				max_width = 80,
 				max_height = 20,
 			})
@@ -42,8 +42,8 @@ autocmd('LspAttach', {
 
 		vim.keymap.set("i", "<C-h>", function()
 			vim.lsp.buf.signature_help({
-				border = "rounded",
-				focusable = false,
+				border = "none",
+				focusable = true,
 				max_width = 80,
 				max_height = 20,
 			})

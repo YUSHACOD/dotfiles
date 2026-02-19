@@ -4,49 +4,55 @@ recent_project: path: "E:/algo_ball/build/debug/AlgoBall.rad"
 recent_project: path: "../AppData/Roaming/raddbg/default.raddbg_project"
 window:
 {
-  size: 973 1038
+  size: 1936 1038
   panels:
   {
-    0.465509: text:
+    0.497347:
     {
-      selected
-      expression: "file:\"C:/Users/91724/cpp/algo_ball/src/ball.cpp\".data"
-      auto: 1
-      cursor_line: 30
-      cursor_column: 1
-      mark_line: 30
-      mark_column: 1
-      query: input: ""
-    }
-    0.534491:
-    {
-      0.499999:
+      text:
       {
         selected
+        expression: "file:\"C:/Users/91724/cpp/canvas/src/windows.cpp\".data"
+        auto: 1
+        cursor_line: 606
+        cursor_column: 1
+        mark_line: 606
+        mark_column: 1
+        query: input: ""
+      }
+      text:
+      {
+        expression: "file:\"D:/a/_work/1/s/src/vctools/crt/vcstartup/src/startup/exe_common.inl\".data"
+        query: input: ""
+        cursor_line: 1
+        cursor_column: 1
+        mark_line: 1
+        mark_column: 1
+        auto: 1
+      }
+    }
+    0.502653:
+    {
+      0.462303:
+      {
         watch: expression: "query:locals"
         watch:
         {
           selected
           expression: ""
-          watch: "arr.v, arr.size"
-          watch: i
-          watch: j
-          watch: key
+          normal: 0.381968 0.618032
+          watch: Global_DeviceCtx
+          watch: Global_ScreenDim
+          watch: Global_Bitmap
+          watch: Global_OpenGLState
+          watch: Global_IsRunning
+          watch: Global_AspectRatio
         }
-        watch: expression: "query:types"
+        watch: expression: "query:globals"
       }
-      0.499999:
+      0.537695:
       {
-        text:
-        {
-          expression: "query:output"
-          query: input: ""
-          cursor_line: 1
-          cursor_column: 1
-          mark_line: 1
-          mark_column: 1
-        }
-        watch: selected expression: "query:call_stack"
+        selected
         disasm:
         {
           expression: ""
@@ -54,14 +60,25 @@ window:
         }
         watch: expression: "query:modules"
         watch: expression: "query:threads"
-        watch: expression: "query:targets"
-        watch: expression: "query:breakpoints"
+        text:
+        {
+          expression: "query:output"
+          query: input: ""
+          cursor_line: 3
+          cursor_column: 1
+          mark_line: 3
+          mark_column: 1
+          scroll_to_bottom_on_change: 1
+        }
+        watch: expression: "query:call_stack"
+        watch: selected expression: "query:breakpoints"
       }
     }
   }
   split_x
-  pos: 955 50
+  pos: -8 50
   monitor: "\\\\.\\DISPLAY1"
+  font_size: 11
 }
 keybindings:
 {
@@ -182,5 +199,5 @@ keybindings:
   { log_marker m ctrl shift alt }
   { toggle_dev_menu d ctrl shift alt }
 }
-current_path: "E:/algo_ball/build/debug"
+current_path: "C:/Users/91724/.config"
 theme: "VS (Dark)"
