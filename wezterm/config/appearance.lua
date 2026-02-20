@@ -8,7 +8,7 @@ return {
 	animation_fps = 60,
 	max_fps = 60,
 
-	front_end = 'OpenGL',
+	front_end = 'WebGpu',
 
 	-- font
 	font = wezterm.font("JetBrainsMonoNL Nerd Font Mono"),

@@ -48,10 +48,10 @@ window_effects:
   other_windows:
     transparency:
       enabled: false
-      opacity: "50%"
+      opacity: "80%"
 
     border:
-      enabled: true
+      enabled: false
       color: '#0e1415'
 
 window_behavior:

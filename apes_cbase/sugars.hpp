@@ -54,7 +54,7 @@ internal inline void ZeroMem(void* Memory, u32 Size) {
 
 #define ARRAY_DEF(T)                                                                               \
     struct {                                                                                       \
-		T*   v;                                                                                   \
+        T*  v;                                                                                     \
         i64 size;                                                                                  \
     }
 typedef ARRAY_DEF(i8) I8Array;
@@ -74,6 +74,33 @@ typedef ARRAY_DEF(u64) U64Array;
         a     = b;                                                                                 \
         b     = t__;                                                                               \
     } while (0)
+
+#define GL_MAT(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p)                                     \
+    {a, e, i, m, b, f, j, n, c, g, k, o, d, h, l, p}
+
+
+typedef union {
+    f32 pos[4];
+    struct {
+        f32 x;
+        f32 y;
+        f32 z;
+        f32 w;
+    };
+} v4;
+
+#define DeferLoop(begin, end) for (int _i_ = ((begin), 0); !_i_; _i_ += 1, (end))
+#define DeferLoopChecked(begin, end)                                                               \
+    for (int _i_ = 2 * !(begin); (_i_ == 2 ? ((end), 0) : !_i_); _i_ += 1, (end))
+
+#define EnumCount(type) (_COUNT_##type)
+
+#define EachIndex(it, count)         (U64 it = 0; it < (count); it += 1)
+#define EachElement(it, array)       (U64 it = 0; it < ArrayCount(array); it += 1)
+#define EachEnumVal(type, it)        (type it = (type)0; it < _COUNT_##type; it = (type)(it + 1))
+#define EachNonZeroEnumVal(type, it) (type it = (type)1; it < _COUNT_##type; it = (type)(it + 1))
+#define EachInRange(it, range)       (U64 it = (range).min; it < (range).max; it += 1)
+#define EachNode(it, T, first)       (T* it = first; it != 0; it = it->next)
 
 // ----------------------------------------------------------- //
 #endif

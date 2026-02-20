@@ -27,5 +27,5 @@ vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })       -- Popup menus, also seen
 vim.o.exrc = true      -- allow local config
 vim.o.secure = true   -- restrict unsafe commands
 
-vim.cmd('colorscheme alabaster')
+vim.cmd('colorscheme studio98')
 

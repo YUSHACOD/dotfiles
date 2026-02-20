@@ -7,46 +7,40 @@ window:
   size: 1936 1038
   panels:
   {
-    0.497347:
+    0.500000: text:
     {
-      text:
-      {
-        selected
-        expression: "file:\"C:/Users/91724/cpp/canvas/src/windows.cpp\".data"
-        auto: 1
-        cursor_line: 606
-        cursor_column: 1
-        mark_line: 606
-        mark_column: 1
-        query: input: ""
-      }
-      text:
-      {
-        expression: "file:\"D:/a/_work/1/s/src/vctools/crt/vcstartup/src/startup/exe_common.inl\".data"
-        query: input: ""
-        cursor_line: 1
-        cursor_column: 1
-        mark_line: 1
-        mark_column: 1
-        auto: 1
-      }
+      selected
+      expression: "file:\"C:/Users/91724/cpp/canvas/src/opengl.cpp\".data"
+      auto: 1
+      cursor_line: 140
+      cursor_column: 1
+      mark_line: 140
+      mark_column: 1
+      query: input: ""
     }
-    0.502653:
+    0.500000:
     {
       0.462303:
       {
-        watch: expression: "query:locals"
         watch:
         {
           selected
+          expression: "query:locals"
+          normal: 0.350000 0.650000
+        }
+        watch:
+        {
           expression: ""
           normal: 0.381968 0.618032
           watch: Global_DeviceCtx
-          watch: Global_ScreenDim
-          watch: Global_Bitmap
+          watch: Global_DiplaySize
           watch: Global_OpenGLState
           watch: Global_IsRunning
           watch: Global_AspectRatio
+          watch: Global_ModulePath
+          watch: Global_ModulePathLen
+          watch: uniforms
+          watch: "gl_glbl_uniform_name[0]"
         }
         watch: expression: "query:globals"
       }
@@ -62,6 +56,7 @@ window:
         watch: expression: "query:threads"
         text:
         {
+          selected
           expression: "query:output"
           query: input: ""
           cursor_line: 3
@@ -71,7 +66,7 @@ window:
           scroll_to_bottom_on_change: 1
         }
         watch: expression: "query:call_stack"
-        watch: selected expression: "query:breakpoints"
+        watch: expression: "query:breakpoints"
       }
     }
   }
