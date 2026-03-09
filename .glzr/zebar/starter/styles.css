@@ -9,9 +9,9 @@
 :root {
   /* Colors */
   --color-text: rgb(255 255 255 / 90%);
-  --color-text-dark: rgb(25 28 33 / 100%);
-  --color-accent: rgb(206 206 206 / 100%);
-  --color-accent-light: rgb(206 206 206 / 75%);
+  --color-text-dark: rgb(0 0 0 / 100%);
+  --color-accent: rgb(190 190 190 / 100%);
+  --color-accent-light: rgb(190 190 190 / 75%);
   --color-focus: rgb(255 255 255);
   --color-cpu-high: #d3fc1b;
 

@@ -1,8 +1,12 @@
 #ifndef APEYUSH_SUGARS_H
 #define APEYUSH_SUGARS_H
-// Sugars ---------------------------------------------------- //
+//  Sugars : ------------------------------------------------------------------------- (section)  //
+
 
 #include <stdint.h>
+#include <stddef.h>
+#include <stdint.h>
+
 
 #define global static
 #define internal
@@ -42,15 +46,6 @@ internal inline u32 SafeTruncateU64(u64 Val) {
     return (u32)Val;
 }
 
-internal inline void ZeroMem(void* Memory, u32 Size) {
-    u8* Byte = (u8*)Memory;
-    while (Size--) {
-        *Byte++ = 0;
-    }
-}
-
-#define ZeroStruct(Instance)    ZeroMemory(&(Instance), sizeof(Instance))
-#define ZeroArray(Array, Count) ZeroMemory((Array), sizeof((Array)[0]) * (Count))
 
 #define ARRAY_DEF(T)                                                                               \
     struct {                                                                                       \
@@ -75,25 +70,20 @@ typedef ARRAY_DEF(u64) U64Array;
         b     = t__;                                                                               \
     } while (0)
 
-#define GL_MAT(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p)                                     \
-    {a, e, i, m, b, f, j, n, c, g, k, o, d, h, l, p}
-
-
-typedef union {
-    f32 pos[4];
-    struct {
-        f32 x;
-        f32 y;
-        f32 z;
-        f32 w;
-    };
-} v4;
 
 #define DeferLoop(begin, end) for (int _i_ = ((begin), 0); !_i_; _i_ += 1, (end))
 #define DeferLoopChecked(begin, end)                                                               \
     for (int _i_ = 2 * !(begin); (_i_ == 2 ? ((end), 0) : !_i_); _i_ += 1, (end))
 
-#define EnumCount(type) (_COUNT_##type)
+
+
+#define EnumCount(type) _COUNT_##type
+#define Enum(name, ...)                                                                            \
+    typedef enum {                                                                                 \
+        __VA_ARGS__,                                                                               \
+        EnumCount(name),                                                                           \
+    } name;
+
 
 #define EachIndex(it, count)         (U64 it = 0; it < (count); it += 1)
 #define EachElement(it, array)       (U64 it = 0; it < ArrayCount(array); it += 1)
@@ -102,5 +92,58 @@ typedef union {
 #define EachInRange(it, range)       (U64 it = (range).min; it < (range).max; it += 1)
 #define EachNode(it, T, first)       (T* it = first; it != 0; it = it->next)
 
-// ----------------------------------------------------------- //
+//  Math Utils : --------------------------------------------------------------------- (section)  //
+#define GL_MAT(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p)                                     \
+    {a, e, i, m, b, f, j, n, c, g, k, o, d, h, l, p}
+
+#define PercentOf(val, of)  ((val / 100.0f) * of)
+#define DegreestoRadians(v) (v * (Pi32 / 180.0f))
+
+typedef union {
+    f32 arr[4];
+    struct {
+        f32 x;
+        f32 y;
+        f32 z;
+        f32 w;
+    };
+
+    struct {
+        f32 r;
+        f32 g;
+        f32 b;
+        f32 a;
+    };
+
+    struct {
+        f32 q0;
+        f32 q1;
+        f32 q2;
+        f32 q3;
+    } quat;
+} v4;
+
+typedef struct {
+    f32 x;
+    f32 y;
+    f32 w;
+    f32 h;
+} rectangle;
+
+typedef union {
+    f32 arr[3];
+    struct {
+        f32 x;
+        f32 y;
+        f32 z;
+    };
+    struct {
+        f32 r;
+        f32 g;
+        f32 b;
+    };
+} v3;
+//  (section) --------------------------------------------------------------------- : Math Utils  //
+
+//  (section) ------------------------------------------------------------------------- : Sugars  //
 #endif

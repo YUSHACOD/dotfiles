@@ -64,7 +64,7 @@ return {
 		constrain_cursor = "editable",
 
 		-- Set to true to watch the filesystem for changes and reload oil
-		watch_for_changes = false,
+		watch_for_changes = true,
 
 		-- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
 		-- options with a `callback` (e.g. { callback = function() ... end, desc = "", mode = "n" })

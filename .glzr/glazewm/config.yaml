@@ -1,7 +1,7 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ['shell-exec zebar']
+  startup_commands: ['shell-exec zebar', 'shell-exec wezterm-gui']
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
@@ -85,7 +85,7 @@ workspaces:
   - name: '4'
   - name: '5'
   - name: '6'
-  - name: 'spotify'
+  - name: 'media'
   - name: 'chat'
   - name: 'browser'
   - name: 'editor'
@@ -114,6 +114,10 @@ window_rules:
       - window_process: { equals: 'Microsoft' }
         window_title: { regex: 'Command Palette' }
 
+  - commands: ['move --workspace terminal']
+    match:
+      - window_process: { regex: 'wezterm' }
+
   - commands: ['move --workspace editor', 'toggle-fullscreen', 'focus --workspace editor']
     match:
       - window_process: { regex: 'neovide' }
@@ -131,9 +135,11 @@ window_rules:
       - window_title: { regex: 'Dino' }
 
 
-  - commands: ['move --workspace spotify']
+  - commands: ['move --workspace media']
     match:
       - window_process: { regex: 'Spotify' }
+      - window_title: { regex: 'Harmonoid' }
+      - window_title: { regex: 'VLC media player' }
 
 
 binding_modes:
@@ -277,7 +283,7 @@ keybindings:
     bindings: ['alt+5']
   - commands: ['focus --workspace 6']
     bindings: ['alt+6']
-  - commands: ['focus --workspace spotify']
+  - commands: ['focus --workspace media']
     bindings: ['alt+7']
   - commands: ['focus --workspace chat']
     bindings: ['alt+8']
@@ -311,7 +317,7 @@ keybindings:
     bindings: ['alt+shift+5']
   - commands: ['move --workspace 6', 'focus --workspace 6']
     bindings: ['alt+shift+6']
-  - commands: ['move --workspace spotify', 'focus --workspace spotify']
+  - commands: ['move --workspace media', 'focus --workspace media']
     bindings: ['alt+shift+7']
   - commands: ['move --workspace chat', 'focus --workspace chat']
     bindings: ['alt+shift+8']

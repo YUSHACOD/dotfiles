@@ -4,14 +4,14 @@ return {
 	priority = 1000,
 	config = function()
 		require("zen").setup({
-			variant = "light", -- "dark" or "light"
+			variant = "dark", -- "dark" or "light"
 			undercurl = true,
 			transparent = false,
 			dimInactive = false,
 			terminalColors = true,
 			commentStyle = { italic = true },
 			functionStyle = {},
-			keywordStyle = { italic = true },
+			keywordStyle = { italic = false },
 			statementStyle = {},
 			typeStyle = {},
 			compile = false,

@@ -16,18 +16,35 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
+
 vim.keymap.set("n", "<leader>e", "<cmd>LspRestart<CR>")
 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set("n", "<leader>n", "<cmd>noh<CR>")
 
+vim.keymap.set({ "n", "v" }, "<leader>[", "_")
+vim.keymap.set({ "n", "v" }, "<leader>]", "$")
+
 vim.keymap.set("n", "<leader>ve", ":set virtualedit=all<cr>")
 vim.keymap.set("n", "<leader>vo", ":set virtualedit=none<cr>")
 
+-- CamelCase -> CAMEL_CASE
+local function camel_to_macro()
+    local word = vim.fn.expand("<cword>")
+    local converted = word
+        :gsub("(%l)(%u)", "%1_%2")  -- split camel boundary
+        :gsub("(%u)(%u%l)", "%1_%2") -- split HTTPServer -> HTTP_Server
+        :upper()
+
+    vim.cmd("normal! ciw" .. converted)
+end
+
+vim.keymap.set("n", "<leader>cc", camel_to_macro, { desc = "CamelCase → CAMEL_CASE" })
+
 -- windowing shit
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>s", "<cmd>vertical split<CR><C-w>l", opts)
+vim.keymap.set("n", "<leader>vs", "<cmd>vertical split<CR><C-w>l", opts)
 vim.keymap.set("n", "<leader>is", "<cmd>horizontal split<CR><C-w>j", opts)
 
 
