@@ -1,0 +1,82 @@
+[colors]
+ansi = [
+  "#101f30", # bg,      anlan
+  "#f03752", # red,     haitanghong
+  "#57c3c2", # green,   shilü
+  "#fbb957", # yellow,  mihuang
+  "#66a9c9", # blue,    jianshilan
+  "#ea7293", # magenta, fengxianhuahong
+  "#51c4d3", # cyan,    pubulan
+  "#c4cbcf", # fg0,     dalishihui
+]
+background = "#101f30" # bg, anlan
+brights = [
+  "#21373d", # bg0,      huilan
+  "#c21f30", # red0,     fengyehong
+  "#12aa9c", # green0,   meidielü
+  "#806332", # yellow0,  canghuang
+  "#1661ab", # blue0,    dianqing
+  "#ee2c79", # magenta0, zijinghong
+  "#1e9eb3", # cyan0,    cuilan
+  "#e4dfd7", # fg,       zhenzhuhui
+]
+compose_cursor = "#1e9eb3" #  cyan0,  cuilan
+cursor_bg = "#e4dfd7" #       fg,     zhenzhuhui
+cursor_border = "#e4dfd7" #   fg,     zhenzhuhui
+cursor_fg = "#101f30" #       bg,     anlan
+foreground = "#e4dfd7" #      fg,     zhenzhuhui
+scrollbar_thumb = "#c4cbcf" # fg0,    dalishihui
+selection_bg = "#21373d" #    bg0,    huilan
+selection_fg = "none"
+split = "#c4cbcf" #           fg0,    dalishihui
+
+[colors.indexed]
+
+[colors.tab_bar]
+background = "#21373d" # bg0, huilan
+
+[colors.tab_bar.active_tab]
+bg_color = "#101f30"  # bg, anlan
+fg_color = "#e4dfd7"  # fg, zhenzhuhui
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#21373d"  # bg0, huilan
+fg_color = "#c4cbcf"  # fg0, dalishihui
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#c4cbcf"  # fg0, dalishihui
+fg_color = "#101f30"  # bg,  anlan
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#21373d"  # bg0, huilan
+fg_color = "#c4cbcf"  # fg0, dalishihui
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#c4cbcf"  # fg0, dalishihui
+fg_color = "#101f30"  # bg,  anlan
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[metadata]
+aliases = []
+author = "Lettepa"
+name = "Lettepa Dark"
+origin_url = "https://github.com/lettepa/wezterm"

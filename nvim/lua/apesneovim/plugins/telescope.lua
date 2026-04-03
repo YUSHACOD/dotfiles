@@ -79,7 +79,7 @@ return {
 			["<leader>fh"] = function() builtin.help_tags(theme_presets.dropdown()) end,
 			["<leader>fr"] = function() builtin.resume(theme_presets.dropdown()) end,
 			["<leader>fgf"] = function() builtin.git_files(theme_presets.ivy()) end,
-			["<leader>fs"] = function() builtin.lsp_document_symbols(theme_presets.cursor()) end,
+			["<leader>fs"] = function() builtin.lsp_document_symbols(theme_presets.dropdown()) end,
 		}
 
 		for lhs, rhs in pairs(map) do

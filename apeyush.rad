@@ -9,62 +9,87 @@ window:
   monitor: "\\\\.\\DISPLAY1"
   panels:
   {
-    0.488482: selected text:
+    0.498926:
     {
-      selected
-      expression: "file:\"C:/Users/91724/cpp/canvas/src/windows.cpp\".data"
-      auto: 1
-      query:
+      text:
       {
-        input: ""
-        cmd: search
+        expression: "file:\"C:/Users/91724/cpp/canvas/src/windows.cpp\".data"
+        query: input: ""
+        cursor_line: 524
+        cursor_column: 1
+        mark_line: 524
+        mark_column: 1
+        auto: 1
+        scroll_to_bottom_on_change: 1
+        show_line_numbers: 0
       }
-      cursor_line: 765
-      cursor_column: 1
-      mark_line: 765
-      mark_column: 1
-    }
-    0.511518:
-    {
-      0.408027:
+      text:
       {
+        expression: "file:\"C:/Users/91724/cpp/canvas/src/canvas.cpp\".data"
+        auto: 1
+        query:
+        {
+          input: ""
+          cmd: search
+        }
+        cursor_line: 459
+        cursor_column: 1
+        mark_line: 459
+        mark_column: 1
+      }
+      text:
+      {
+        selected
+        expression: "file:\"C:/Users/91724/cpp/canvas/src/opengl.cpp\".data"
+        query: input: ""
+        cursor_line: 477
+        cursor_column: 1
+        mark_line: 477
+        mark_column: 1
+      }
+    }
+    0.501074:
+    {
+      0.518421:
+      {
+        selected
+        watch: selected expression: "query:locals"
         watch:
         {
-          selected
-          expression: "query:locals"
-          normal: 0.350000 0.650000
+          expression: ""
+          watch: "state->piece.pos"
+          watch: "state.grid.cols"
+          watch: "state.p_anim"
+          watch: wParam
+          watch: show_cmd
         }
         watch: expression: "query:globals"
       }
-      0.333333: watch:
+      0.481576:
       {
-        selected
-        expression: ""
-        watch: "push_buffer.cube_wf_buffer.cubes[0]"
-      }
-      0.258638:
-      {
+        watch: selected expression: "query:breakpoints"
+        watch: expression: "query:call_stack"
+        watch: expression: "query:threads"
+        watch: expression: "query:modules"
         disasm:
         {
           expression: ""
-          query: input: ""
+          query:
+          {
+            input: ""
+            cmd: search
+          }
         }
-        watch: expression: "query:call_stack"
+        watch: expression: "query:targets"
         text:
         {
-          selected
           expression: "query:output"
           query: input: ""
-          cursor_line: 3
+          cursor_line: 1
           cursor_column: 1
-          mark_line: 3
+          mark_line: 1
           mark_column: 1
-          scroll_to_bottom_on_change: 1
         }
-        watch: expression: "query:breakpoints"
-        watch: expression: "query:targets"
-        watch: expression: "query:threads"
-        watch: expression: "query:modules"
       }
     }
   }
@@ -191,7 +216,7 @@ keybindings:
   { log_marker m ctrl shift alt }
   { toggle_dev_menu d ctrl shift alt }
 }
-current_path: "C:/Users/91724/cpp/canvas/build/debug"
+current_path: "E:/tmp/raddebugger/build"
 theme_color:
 {
   tags: background
@@ -588,3 +613,5 @@ theme_color:
   value: 0xffffff0f
 }
 theme: "VS (Dark)"
+file_path_map
+file_path_map

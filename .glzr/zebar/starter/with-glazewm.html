@@ -81,7 +81,7 @@
 
 			function getBatteryStatus(isCharging) {
 				if (isCharging) {
-					return "Plugged:";
+					return "Plug:";
 				} else {
 					return "Chrg:";
 				}
@@ -136,15 +136,16 @@
 
 						{output.network && (
 							<div className="network">
-								Net: 
-								{output.network.defaultInterface?.friendlyName}
+								Net:
+								{output.network.defaultInterface?.friendlyName.includes("Loopback")
+								?  "Not Connected" : output.network.defaultInterface?.friendlyName}
 							</div>
 						)}
 
 						{output.memory && (
 							<div className="memory">
 								MeM:
-								{Math.round(output.memory.usage)}%
+								{("000" + Math.round(output.memory.usage)).slice(-3)}%
 							</div>
 						)}
 
@@ -155,7 +156,7 @@
 								<span
 									className={output.cpu.usage > 85 ? 'high-usage' : ''}
 								>
-									{Math.round(output.cpu.usage)}%
+									{("000" + Math.round(output.cpu.usage)).slice(-3)}%
 								</span>
 							</div>
 						)}
@@ -163,7 +164,7 @@
 						{output.battery && (
 							<div className="battery">
 								{getBatteryStatus(output.battery.isCharging)}
-								{Math.round(output.battery.chargePercent)}%
+								{("000" + Math.round(output.battery.chargePercent)).slice(-3)}%
 							</div>
 						)}
 					</div>

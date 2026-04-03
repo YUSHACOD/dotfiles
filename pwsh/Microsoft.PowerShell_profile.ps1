@@ -60,6 +60,17 @@ Set-Alias ln New-Symlink
 D:\HeavyPrograms\VisualStudio2026\Common7\Tools\Launch-VsDevShell.ps1  -SkipAutomaticLocation -Arch amd64 | Out-Null 
 # ------------------------------------------------------------------------------------------------------ #
 
+
+#  prompt_theme : --------------------------------------------------------------------- (section)  #
+Set-PSReadLineOption -Colors @{
+    Command   = "Green"
+    Parameter = "Cyan"
+    String    = "Yellow"
+    Operator  = "Cyan"
+    Variable  = "Magenta"
+}
+#  (section) --------------------------------------------------------------------- : prompt_theme  #
+
 # Aliases ---------------------------------------------------------------------------------------------- #
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name psconf -Value D:\Documents\PowerShell\conf_script_ps\psconf.ps1

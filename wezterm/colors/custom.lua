@@ -1,4 +1,4 @@
-local naysayer_them = {
+local naysayer_theme = {
 	-- JBLOW THEME
 	background = "#282828",
 
@@ -11,11 +11,11 @@ local naysayer_them = {
 	split = '#d3b58e',
 }
 
-local theme_file = "zenbones_dark.toml"
+local theme_file = "oxocarbon-dark.toml"
 
 local wezterm = require('wezterm')
 local home_path = os.getenv("XDG_CONFIG_HOME")
 local loaded_theme, _ = wezterm.color.load_scheme(home_path .. "/wezterm/colors/" .. theme_file)
 
 
-return loaded_theme
+return naysayer_theme

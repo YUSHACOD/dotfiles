@@ -19,11 +19,11 @@
   --spacing-small: 4px;
   --spacing-medium: 8px;
   --spacing-gap: 4px;
-  --margin-right: 7px;
+  --margin-right: 0px;
 
   /* Typography */
   --font-family-mono: 'JetBrainsMonoNL Nerd Font Mono', ui-monospace, monospace;
-  --font-size-base: 14px;
+  --font-size-base: 13px;
   --font-weight-bold: 600;
 
   /* Borders */
@@ -101,7 +101,7 @@ body,
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
   color: var(--color-accent);
-  border: 2px;
+  border: 1px;
   border-style: solid;
   border-color: var(--color-accent);
   border-radius: var(--border-radius);
@@ -121,7 +121,7 @@ body,
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
   color: var(--color-accent);
-  border: 2px;
+  border: 1px;
   border-style: solid;
   border-color: var(--color-accent);
   font-size: var(--font-size-base);
