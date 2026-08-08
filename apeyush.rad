@@ -1,7 +1,8 @@
-// raddbg 0.9.25 user file
+// raddbg 0.9.26 user file
 
 recent_project: path: "../cpp/canvas/canvas_dbg.rad"
 recent_project: path: "E:/tmp/proj-mini/p7/hook.rad"
+recent_project: path: "E:/tmp/proj-mini/p7/giu_ui/hook.rad"
 window:
 {
   size: 1936 1038
@@ -9,37 +10,37 @@ window:
   monitor: "\\\\.\\DISPLAY1"
   panels:
   {
-    0.498926:
+    0.500000:
     {
       text:
       {
+        selected
         expression: "file:\"C:/Users/91724/cpp/canvas/src/windows.cpp\".data"
         query: input: ""
-        cursor_line: 524
-        cursor_column: 1
-        mark_line: 524
-        mark_column: 1
+        cursor_line: 711
+        cursor_column: 52
+        mark_line: 711
+        mark_column: 52
         auto: 1
         scroll_to_bottom_on_change: 1
         show_line_numbers: 0
       }
       text:
       {
-        expression: "file:\"C:/Users/91724/cpp/canvas/src/canvas.cpp\".data"
+        expression: "file:\"E:/tmp/proj-mini/p7/hookdll/hooks.hpp\".data"
         auto: 1
         query:
         {
           input: ""
           cmd: search
         }
-        cursor_line: 459
+        cursor_line: 14654
         cursor_column: 1
-        mark_line: 459
+        mark_line: 14654
         mark_column: 1
       }
       text:
       {
-        selected
         expression: "file:\"C:/Users/91724/cpp/canvas/src/opengl.cpp\".data"
         query: input: ""
         cursor_line: 477
@@ -48,12 +49,16 @@ window:
         mark_column: 1
       }
     }
-    0.501074:
+    0.500000:
     {
-      0.518421:
+      0.518419:
       {
-        selected
-        watch: selected expression: "query:locals"
+        watch:
+        {
+          selected
+          expression: "query:locals"
+          normal: 0.372678 0.627322
+        }
         watch:
         {
           expression: ""
@@ -65,10 +70,11 @@ window:
         }
         watch: expression: "query:globals"
       }
-      0.481576:
+      0.481573:
       {
-        watch: selected expression: "query:breakpoints"
-        watch: expression: "query:call_stack"
+        selected
+        watch: expression: "query:breakpoints"
+        watch: selected expression: "query:call_stack"
         watch: expression: "query:threads"
         watch: expression: "query:modules"
         disasm:

@@ -1,44 +1,88 @@
 return {
-	'nvim-treesitter/nvim-treesitter',
-	lazy = false,
-	branch = 'main',
-	build = ':TSUpdate',
-	config = function()
-		local ts = require("nvim-treesitter")
+    "nvim-treesitter/nvim-treesitter",
+    main = "nvim-treesitter",
+    -- build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
+    init = function()
+      local highlight = function(bufnr, lang)
+        -------------------[ treesitter highlights ]-------------------------------
+        if not vim.treesitter.language.add(lang) then
+          return vim.notify(
+            string.format("Treesitter cannot load parser for language: %s", lang),
+            vim.log.levels.INFO,
+            { title = "Treesitter" }
+          )
+        end
+        vim.treesitter.start(bufnr)
+      end
 
-		-- Replaces `ensure_installed`: install your baseline parsers at startup.
-		-- This is a no-op for already-installed parsers, so it's safe to always run.
-		ts.install({ "c", "lua", "vim", "vimdoc", "cpp" }, { summary = false })
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          local ft = vim.bo.filetype
+          local bt = vim.bo.buftype
+          local buf = args.buf
 
-		-- Replaces `auto_install` + `highlight.enable` + `indent.enable`:
-		-- On every FileType event, install the parser if missing, then activate features.
-		vim.api.nvim_create_autocmd("FileType", {
-			group = vim.api.nvim_create_augroup("treesitter_autostart", { clear = true }),
-			pattern = "*",
-			callback = function(ev)
-				local lang = ev.match
+          if bt ~= "" then
+            return
+          end -- don't run further.
 
-				-- Only attempt install if the language is known to nvim-treesitter,
-				-- avoiding warnings for filetypes like 'help', 'qf', 'man', etc.
-				local parsers = require("nvim-treesitter.parsers")
-				if parsers[lang] then
-					local ok, task = pcall(ts.install, { lang }, { summary = false })
-					if ok and task then
-						task:wait(10000)
-					end
-				end
+          local ok, treesitter = pcall(require, "nvim-treesitter")
+          if not ok then
+            return
+          end
 
-				-- Enable treesitter highlighting (replaces highlight.enable = true)
-				pcall(vim.treesitter.start, ev.buf, lang)
+          ---------------------[ treesitter indent ]-------------------------------
 
-				-- Enable treesitter indentation (replaces indent.enable = true)
-				-- vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          if not vim.tbl_contains({ "python", "html", "yaml", "markdown" }, ft) then
+            vim.bo.indentexpr = "v:lua.require('nvim-treesitter').indentexpr()"
+          end
 
-				-- Enable treesitter folding (optional)
-				-- vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-				-- vim.wo[0][0].foldmethod = "expr"
-				-- vim.wo.foldenable = false  -- start with folds open; use 'zi' or 'zR' to open all
-			end,
-		})
-	end,
-}
+          --------------------[ treesitter parsers ]-------------------------------
+          if vim.fn.executable "tree-sitter" ~= 1 then
+            vim.api.nvim_echo({
+              {
+                "tree-sitter CLI not found. Parsers cannot be installed.",
+                "ErrorMsg",
+              },
+            }, true, {})
+            return false
+          end
+
+          if not vim.treesitter.language.get_lang(ft) then
+            return
+          end
+
+          if vim.list_contains(treesitter.get_installed(), ft) then
+            highlight(buf, ft)
+          elseif vim.list_contains(treesitter.get_available(), ft) then
+            treesitter.install(ft):await(function()
+              highlight(buf, ft)
+            end)
+          end
+        end,
+      })
+    end,
+    opts = {
+      install = {
+        "c",
+        "cpp",
+        "lua",
+		"go",
+        "vimdoc",
+      },
+    },
+    config = function(_, opts)
+      local treesitter = require "nvim-treesitter"
+      treesitter.setup(opts)
+      if vim.fn.executable "tree-sitter" ~= 1 then
+        vim.api.nvim_echo({
+          {
+            "tree-sitter CLI not found. Parsers cannot be installed.",
+            "ErrorMsg",
+          },
+        }, true, {})
+        return false
+      end
+      treesitter.install(opts.install)
+    end,
+  }

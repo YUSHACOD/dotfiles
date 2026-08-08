@@ -26,8 +26,8 @@ vim.keymap.set("n", "<leader>n", "<cmd>noh<CR>")
 vim.keymap.set({ "n", "v" }, "<leader>[", "_")
 vim.keymap.set({ "n", "v" }, "<leader>]", "$")
 
-vim.keymap.set("n", "<leader>ve", ":set virtualedit=all<cr>")
-vim.keymap.set("n", "<leader>vo", ":set virtualedit=none<cr>")
+vim.keymap.set("n", "<leader>ve", ":set virtualedit=all | set textwidth=0 <cr>")
+vim.keymap.set("n", "<leader>vo", ":set virtualedit=none | set textwidth=100 <cr>")
 
 -- CamelCase -> CAMEL_CASE
 local function camel_to_macro()

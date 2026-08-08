@@ -17,7 +17,7 @@ if vim.g.neovide then
 	vim.g.neovide_text_contrast = 1.0
 
 	-- font padding
-	vim.g.neovide_padding_top = 0
+	vim.g.neovide_padding_top = 5
 	vim.g.neovide_padding_bottom = 0
 	vim.g.neovide_padding_right = 0
 	vim.g.neovide_padding_left = 0
@@ -32,11 +32,12 @@ if vim.g.neovide then
 	vim.g.neovide_light_angle_degrees = 45
 	vim.g.neovide_light_radius = 5
 
+
 	-- float radius
 	vim.g.neovide_floating_corner_radius = 10.0
 
 	-- window animation length
-	vim.g.neovide_position_animation_length = 0.175
+	vim.g.neovide_position_animation_length = 0.15
 
 	-- scroll animation length
 	vim.g.neovide_scroll_animation_length = 0.1
@@ -49,6 +50,9 @@ if vim.g.neovide then
 
 	-- underline scaling
 	vim.g.neovide_underline_stroke_scale = 0.5
+
+	-- message are mouse drag
+	vim.g.neovide_message_area_drag_selection = true
 
 	-- refresh rate
 	vim.g.neovide_refresh_rate = 60
@@ -76,7 +80,7 @@ if vim.g.neovide then
 
 
 	-- cursor trail size
-	vim.g.neovide_cursor_trail_size = 0.8
+	vim.g.neovide_cursor_trail_size = 1.0
 
 	-- cursor antialiasing
 	vim.g.neovide_cursor_antialiasing = true
@@ -90,6 +94,11 @@ if vim.g.neovide then
 	-- unfocused outline width
 	vim.g.neovide_cursor_unfocused_outline_width = 0.05
 
+	-- cursor blink
+	vim.g.neovide_cursor_smooth_blink = false
+
+	-- cursor vfx
+	vim.g.neovide_cursor_vfx_mode = ""
 
 	vim.keymap.set('v', '<C-S-c>', '"+y')      -- Copy
 	vim.keymap.set('n', '<C-S-v>', '"+P')      -- Paste normal mode

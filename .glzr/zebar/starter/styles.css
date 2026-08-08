@@ -8,11 +8,11 @@
    ============================== */
 :root {
   /* Colors */
-  --color-text: rgb(255 255 255 / 90%);
-  --color-text-dark: rgb(0 0 0 / 100%);
-  --color-accent: rgb(190 190 190 / 100%);
-  --color-accent-light: rgb(190 190 190 / 75%);
-  --color-focus: rgb(255 255 255);
+  --color-text: rgb(255 255 255 / 100%);
+  --color-text-dark: rgb(0 0 0 / 00%);
+  --color-accent: rgb(253 181 246 / 100%);
+  --color-accent-light: rgb(253 181 246 / 50%);
+  --color-focus: rgb(255 255 255 / 100%);
   --color-cpu-high: #d3fc1b;
 
   /* Spacing */
@@ -27,7 +27,7 @@
   --font-weight-bold: 600;
 
   /* Borders */
-  --border-radius: 0px;
+  --border-radius: 5px;
 }
 
 /* ==============================
@@ -43,6 +43,7 @@ body {
   font-family: var(--font-family-mono);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   overflow: hidden;
 }
 
@@ -76,7 +77,7 @@ body,
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
   color: var(--color-accent);
-  border: 2px;
+  border: 0px;
   border-style: solid;
   border-color: var(--color-accent);
   border-radius: var(--border-radius);
@@ -101,7 +102,7 @@ body,
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
   color: var(--color-accent);
-  border: 1px;
+  border: 0px;
   border-style: solid;
   border-color: var(--color-accent);
   border-radius: var(--border-radius);
@@ -121,7 +122,7 @@ body,
   margin-right: var(--spacing-gap);
   padding: var(--spacing-small) var(--spacing-medium);
   color: var(--color-accent);
-  border: 1px;
+  border: 0px;
   border-style: solid;
   border-color: var(--color-accent);
   font-size: var(--font-size-base);
@@ -138,7 +139,8 @@ body,
 .workspace:hover {
   border: none;
   background: var(--color-accent);
-  color: var(--color-text-dark);
+  /* color: var(--color-text-dark); */
+  color: rgb(0 0 0)
 }
 
 /* ==============================
